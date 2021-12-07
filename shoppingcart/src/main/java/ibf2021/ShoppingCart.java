@@ -62,7 +62,7 @@ public class ShoppingCart {
                 }                                                                               //end of "delete" block
 
             } else {
-                System.out.println("Invalid input! Please use list, add or delete only.");
+                System.out.println("Invalid input! Please only use list, add <item> or delete <item number>.");
             }
             input = scan.next();
         }
