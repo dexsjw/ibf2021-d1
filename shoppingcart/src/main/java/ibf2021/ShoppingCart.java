@@ -7,10 +7,11 @@ public class ShoppingCart {
     public static void main(String[] args) {
         
         ArrayList<String> cart = new ArrayList<>();
-        
+
         System.out.println("Welcome to your shopping cart! Please separate items with a comma.");
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
+        //String scanned = scan.nextLine();
         
         while (!input.trim().toLowerCase().equals("close")) {
 
@@ -24,13 +25,13 @@ public class ShoppingCart {
                 }                                                                               //end of "list" block
 
             } else if (input.trim().toLowerCase().equals("add")) {                              //start of "add" block
-                Scanner addScan = new Scanner(scan.nextLine());
-                if (!addScan.hasNext()) {
+                Scanner scanned = new Scanner(scan.nextLine());
+                if (!scanned.hasNext()) {
                     System.out.println("Please input item to add");
                 } else {
-                    while (addScan.hasNext()) {
-                        addScan.useDelimiter(",");
-                        String addItem = addScan.next();
+                    while (scanned.hasNext()) {
+                        scanned.useDelimiter(",");
+                        String addItem = scanned.next();
                         if (cart.contains(addItem)) {
                             System.out.printf("You have %s in your cart\n", addItem);
                         } else {
@@ -44,10 +45,10 @@ public class ShoppingCart {
                 if (cart.isEmpty()) {
                     System.out.println("Your cart is empty");
                 } else {
-                    Scanner deleteScan = new Scanner(scan.next());
-                    if (deleteScan.hasNextInt()) {
-                        while (deleteScan.hasNext()) {
-                        int index = Integer.parseInt(deleteScan.next());
+                    Scanner scanned = new Scanner(scan.next());
+                    if (scanned.hasNextInt()) {
+                        while (scanned.hasNext()) {
+                        int index = Integer.parseInt(scanned.next());
                             if (index > cart.size()) {
                                 System.out.println("Incorrect item index");
                             } else {
